@@ -1,0 +1,14 @@
+# Define la imagen base de Java
+FROM openjdk:latest
+
+# Establecer el directorio de trabajo
+WORKDIR /app
+
+# Copia los archivos Java al contenedor
+COPY . /app
+
+# Compila los archivos Java
+RUN javac ClienteRMI.java
+
+# Inicia el cliente RMI al ejecutar el contenedor
+CMD ["java", "ClienteRMI"]
